@@ -10,15 +10,15 @@ Run this project by this command :
 **Creating database and table**
 
 ```
-create database test;
+create database TEST;
 
-use test;
+use TEST;
 
-CREATE TABLE users (
-id int(11) NOT NULL auto_increment,
-name varchar(100) NOT NULL,
-age int(3) NOT NULL,
-email varchar(100) NOT NULL,
-PRIMARY KEY (id)
+create table userinfo(
+    userInfoId int primary key auto_increment,
+    name varchar(50),
+    address varchar(50),
+    dateOfBirth date,
+    mobileNumber bigint
 );
 ```
