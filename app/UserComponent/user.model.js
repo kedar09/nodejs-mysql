@@ -1,3 +1,5 @@
+var userUtility = require('./user.utility');
+
 var conn = require('../../config/database');
 
 var connection = conn.getConnection();
@@ -28,8 +30,9 @@ exports.getUserById = function (userInfoId, result) {
 };
 
 
-exports.addUser = function (body, result) {
-    connection.query('insert into userinfo set ?' , body,
+exports.addUser = function (req, result) {
+    let sqlQuery = 'insert into userinfo set ?';
+    connection.query(sqlQuery, req.body,
         function (error, records) {
             if (error) {
                 result(error, null);
@@ -40,29 +43,40 @@ exports.addUser = function (body, result) {
         });
 };
 
-exports.updateUser = function (body, result) {
-    let userInfoId = body.userInfoId;
-    delete body.userInfoId;
-    connection.query('update userinfo set ? where userInfoId = ?', [body, userInfoId] ,
-        function (error, records) {
-            if (error) {
-                result(error, null);
+exports.updateUser = function (req, result) {
+    let sqlQuery = "select count(*) as count from userinfo where userInfoId=?";
+    
+    connection.query(sqlQuery, [req.body.userInfoId],   
+        function(error, recordsArray, fields){
+        if (error){
+            console.log("Error occured while fetching the data !")
+        }else{
+            if(recordsArray[0].count==0){
+                console.log(recordsArray[0].count)
+                 let resultDeleteUser = {message: 'User not found'};
+                 result(null, resultDeleteUser);
             } else {
-                let resultUpdateUser = { message: 'UserInfo Updated Successfully' };
-                result(null, resultUpdateUser);
+                userUtility.updateUser(req, result);
             }
-        });
+        }
+    });
 };
 
-exports.deleteUserById = function (userInfoId, result) {
-    let sqlQuery = 'delete from userinfo where userInfoId = ' + userInfoId;
-    connection.query(sqlQuery, function (error, records) {
-            if (error) {
-                result(error, null);
+exports.deleteUserById = function (req, result) {
+    let sqlQuery = "select count(*) as count from userinfo where userInfoId=?";
+    
+    connection.query(sqlQuery, [req.params.userInfoId],   
+        function(error, recordsArray, fields){
+        if (error){
+            console.log("Error occured while fetching the data !")
+        }else{
+            if(recordsArray[0].count==0){
+                 let resultDeleteUser = {message: 'User not found'};
+                 result(null, resultDeleteUser);
             } else {
-                let resultDeleteUserById = { message: 'UserInfo Deleted Successfully' };
-                result(null, resultDeleteUserById);
+                userUtility.deleteUserById(req, result);
             }
-        });
+        }
+    });
 };
 
