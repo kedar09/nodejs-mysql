@@ -40,7 +40,6 @@ nodejs-mysql
 |____app.js
 |
 |
-|
 |____package.json
 
 ```
