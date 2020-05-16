@@ -1,6 +1,50 @@
 # NodeJs Mysql
 Node.js CRUD application using Mysql
 
+**Folder Structure**
+
+```
+nodejs-mysql
+|
+|
+|____app
+|    |____UserComponent
+|         |____user.controller.js
+|      	  |____user.model.js
+|         |____user.utility.js
+|         |____user.validator.js
+|
+|
+|____bin
+|    |____www
+|
+|
+|____config
+|    |____database.js
+|
+|
+|____node_modules 
+|
+|
+|____public.js
+|    |____stylesheets
+|    |    |__style.css
+|    |
+|    |____index.html
+|
+|
+|____routes
+|    |____users.js
+|
+|
+|____app.js
+|
+|
+|
+|____package.json
+
+```
+
 Run this project by this command :
 
 1. `npm install`
