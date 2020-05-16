@@ -26,7 +26,7 @@ nodejs-mysql
 |____node_modules 
 |
 |
-|____public.js
+|____public
 |    |____stylesheets
 |    |    |__style.css
 |    |
