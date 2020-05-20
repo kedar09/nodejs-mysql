@@ -1,14 +1,14 @@
 var userUtility = require('./user.utility');
 
 var conn = require('../../config/database');
-
 var connection = conn.getConnection();
 
 //connect to database
 connection.connect();
 
 exports.getAllUser = function (result) {
-    let sqlQuery = 'select * from userinfo';
+    let sqlQuery = `select userInfoId,name,address,mobileNumber,DATE_FORMAT(dateOfBirth,
+        '%Y-%m-%d') AS dateOfBirth from userinfo`;
     connection.query(sqlQuery, function (error, resultOfQuery) {
             if (error) {
                 result(error, null);
@@ -19,7 +19,8 @@ exports.getAllUser = function (result) {
 };
 
 exports.getUserById = function (userInfoId, result) {
-    let sqlQuery = 'select * from userinfo where userInfoId = ' + userInfoId;
+    let sqlQuery = `select userInfoId,name,address,mobileNumber,DATE_FORMAT(dateOfBirth,
+        '%Y-%m-%d') AS dateOfBirth from userinfo where userInfoId = ${userInfoId}`;
     connection.query(sqlQuery, function (error, resultOfQuery) {
             if (error) {
                 result(error, null);
