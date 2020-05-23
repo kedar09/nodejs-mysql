@@ -64,11 +64,18 @@ Installation is done using the npm install command:
 ```bash
 $ npm install @hapi/joi
 ```
-Extensions for advance date rules. [joi-date](https://hapi.dev/module/joi-date/) 
+[joi-date](https://hapi.dev/module/joi-date/) extensions for advance date rules.  
 ```bash
 $ npm install @hapi/joi-date
 ```
 
+## MySql
+This is a node.js driver for [mysql](https://github.com/mysqljs/mysql).
+
+Installation is done using the npm install command:
+```bash
+$ npm install mysql
+```
 
 ## Folder Structure
 
