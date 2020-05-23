@@ -1,5 +1,64 @@
-# NodeJs Mysql
-Node.js CRUD application using Mysql
+﻿# NodeJs Mysql
+   Node.js Create-Read-Update-Delete application using Mysql.
+
+
+**Software prerequisites:**
+
+1. Mysql
+2. Node.js
+
+## Installation
+
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/).
+
+Before installing, [download and install Node.js](https://nodejs.org/en/download/).
+Node.js 0.10 or higher is required.
+
+If this is a brand new project, make sure to create a `package.json` first with
+the [`npm init` command](https://docs.npmjs.com/creating-a-package-json-file).
+
+Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+```bash
+$ npm install express
+```
+
+## Quick Start
+
+  The quickest way to get started with express is to utilize the executable [`express(1)`](https://github.com/expressjs/generator) to generate an application as shown below:
+
+  Install the executable. The executable's major version will match Express's:
+
+```bash
+$ npm install -g express-generator@4
+```
+
+  Create the app:
+
+```bash
+$ express nodejs-mysql && cd nodejs-mysql
+```
+
+  Install dependencies:
+
+```bash
+$ npm install
+```
+
+  Start the server:
+
+```bash
+$ npm start
+```
+
+  View the website at: http://localhost:3000
+
+## Joi
+
+  [Joi](https://hapi.dev/tutorials/validation/?lang=en_US) is an object schema description language and validator for JavaScript objects. Joi allows you to create blueprints or schemas for JavaScript objects to ensure validation of key information. To get started with joi, you must first install and add it as a dependency to your project:
+
 
 **Folder Structure**
 
@@ -45,11 +104,6 @@ nodejs-mysql
 
 ```
 
-Run this project by this command :
-
-1. `npm install`
-2. `npm start`
-3. `localhost:3000`
 
 **Creating database and table**
 
@@ -66,3 +120,10 @@ create table userinfo(
     mobileNumber bigint
 );
 ```
+
+Run this project by this command :
+
+1. `npm install`
+2. `npm start`
+3. `localhost:3000`
+
