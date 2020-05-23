@@ -59,8 +59,18 @@ $ npm start
 
   [Joi](https://hapi.dev/tutorials/validation/?lang=en_US) is an object schema description language and validator for JavaScript objects. Joi allows you to create blueprints or schemas for JavaScript objects to ensure validation of key information. To get started with joi, you must first install and add it as a dependency to your project:
 
+Installation is done using the npm install command:
 
-**Folder Structure**
+```bash
+$ npm install @hapi/joi
+```
+Extensions for advance date rules. [joi-date](https://hapi.dev/module/joi-date/) 
+```bash
+$ npm install @hapi/joi-date
+```
+
+
+## Folder Structure
 
 ```
 nodejs-mysql
@@ -69,7 +79,7 @@ nodejs-mysql
 |____app
 |    |____UserComponent
 |         |____user.controller.js
-|      	  |____user.model.js
+|      	 |____user.model.js
 |         |____user.utility.js
 |         |____user.validator.js
 |
@@ -105,7 +115,7 @@ nodejs-mysql
 ```
 
 
-**Creating database and table**
+## Creating database and table
 
 ```
 create database TEST;
@@ -121,7 +131,7 @@ create table userinfo(
 );
 ```
 
-Run this project by this command :
+**Run this project by this command :**
 
 1. `npm install`
 2. `npm start`
