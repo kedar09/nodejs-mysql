@@ -1,10 +1,6 @@
-var userUtility = require('./user.utility');
+const userUtility = require('./user.utility');
 
-var conn = require('../../config/database');
-var connection = conn.getConnection();
-
-//connect to database
-connection.connect();
+const connection = require('../../config/database');
 
 exports.getAllUser = function (result) {
     let sqlQuery = `select userInfoId,name,address,mobileNumber,DATE_FORMAT(dateOfBirth,
