@@ -1,9 +1,4 @@
-var conn = require('../../config/database');
-
-var connection = conn.getConnection();
-
-//connect to database
-connection.connect();
+const connection = require('../../config/database');
 
 exports.deleteUserById= function(req, result) {
     let sqlQuery = 'delete from userinfo where userInfoId = ?';
