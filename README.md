@@ -6,6 +6,7 @@
 
 1. Mysql
 2. Node.js
+3. Joi
 
 ## Installation
 
