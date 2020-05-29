@@ -87,7 +87,7 @@ nodejs-mysql
 |____app
 |    |____UserComponent
 |         |____user.controller.js
-|      	 |____user.model.js
+|      	  |____user.model.js
 |         |____user.utility.js
 |         |____user.validator.js
 |
