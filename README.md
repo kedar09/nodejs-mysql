@@ -4,9 +4,9 @@
 
 **Software prerequisites:**
 
-1. Mysql
-2. Node.js
-3. Joi
+1. Node.js
+2. Joi
+3. Mysql
 
 ## Installation
 
