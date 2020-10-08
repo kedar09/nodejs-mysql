@@ -1,9 +1,9 @@
-var userModel = require('./user.model');
+const userModel = require('./user.model');
 
 exports.getAllUser = function (req, res) {
     userModel.getAllUser(function (error, result) {
         if (error) {
-            res.send(error);
+            res.status(400).send(error);
         } else {
             res.status(200).send(result);
         }
@@ -13,7 +13,7 @@ exports.getAllUser = function (req, res) {
 exports.getUserById = function (req, res) {
     userModel.getUserById(req.params.userInfoId, function (error, result) {
         if (error) {
-            res.send(error);
+            res.status(400).send(error);
         } else {
             res.status(200).send(result);
         }
@@ -22,9 +22,9 @@ exports.getUserById = function (req, res) {
 
 
 exports.addUser = function (req, res) {
-    userModel.addUser(req.body, function (error, result) {
+    userModel.addUser(req, function (error, result) {
         if (error) {
-            res.send(error);
+            res.status(400).send(error);
         } else {
             res.status(200).send(result);
         }
@@ -32,9 +32,9 @@ exports.addUser = function (req, res) {
 };
 
 exports.updateUser = function (req, res) {
-    userModel.updateUser(req.body, function (error, result) {
+    userModel.updateUser(req, function (error, result) {
         if (error) {
-            res.send(error);
+            res.status(400).send(error);
         } else {
             res.status(200).send(result);
         }
@@ -42,9 +42,9 @@ exports.updateUser = function (req, res) {
 };
 
 exports.deleteUserById = function (req, res) {
-    userModel.deleteUserById(req.params.userInfoId, function (error, result) {
+    userModel.deleteUserById(req, function (error, result) {
         if (error) {
-            res.send(error);
+            res.status(400).send(error);
         } else {
             res.status(200).send(result);
         }
