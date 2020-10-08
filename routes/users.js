@@ -12,7 +12,7 @@ router.get('/getUserById/:userInfoId', userValidator.getUserById);
 router.post('/addUser', userValidator.addUser);
 
 // update user - (body: [userInfoId,name,address,dateOfBirth,mobileNumber]) - (userInfoId is required)
-router.put('/updateUser', userValidator.updateUser);
+router.post('/updateUser', userValidator.updateUser);
 
 // delete user by id - (params: [userInfoId]) - (userInfoId is required)
 router.delete('/deleteUserById/:userInfoId', userValidator.deleteUserById);
